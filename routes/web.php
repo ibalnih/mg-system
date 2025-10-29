@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/admin');
 });
-
+Route::get('login', [CashierController::class, 'showLogin'])->name('login');
 Route::prefix('cashier')->name('cashier.')->group(function () {
     Route::get('login', [CashierController::class, 'showLogin'])->name('login');
     Route::post('login', [CashierController::class, 'login'])->name('login.post');
